@@ -1,0 +1,38 @@
+<!--<div class="mt-4">
+    <form>
+    <div class="form-group">
+        <label for="exampleInputEmail1">Email address</label>
+        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+    </div>
+    <div class="form-group mb-4">
+        <label for="exampleInputPassword1">Password</label>
+        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>-->
+
+<h2 class="ms-1 mt-4"> Enter login credentials </h2>
+<%= form_for @student do |f| -%>
+    <div class="mb-3">
+        <label> Email </label>
+        <%= f.text_field :username, class: 'form-control', placeholder: 'example@gmail.com'%>
+    </div>
+
+    <div class="mb-3">
+        <label> Password </label>
+        <%= f.password_field :password, class: 'form-control', placeholder: 'password123'%>
+    </div>
+
+
+    <%= f.submit "Submit!", class: "btn btn-primary" %>
+<% end -%>
+
+<br>
+<h2 class="ms-1">Display everyones credentials:</h2>
+<% if !@student.blank? %>
+    <% for item in @students %>
+            <h6 class="ms-1">Username: <%= item.username %> | Password: <%= item.password %> </h6>
+    <% end %>
+<% else %>
+<% end %>

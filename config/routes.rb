@@ -4,7 +4,14 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "articles#index"
 
+  root to: 'main#index'
 
   resources :students
+
+  get "about", to: "about#index"
+  get "teacher", to: "teacher#index"
+  get "s", to: "s#index"
+  get "create", to: "create#index"
+
 
 end
