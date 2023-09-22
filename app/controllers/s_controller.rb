@@ -1,16 +1,17 @@
 class SController < ApplicationController
-    def index 
-        @student = Student.new #create new studnet
-        @students = Student.all #get all students
+  def new
+  end
+
+  def create
+      user = Student.find_by(username: params[:username])
+      if user.present?
+        session[:user_id] = user.id
+        redirect_to root_url, notice: "Welcome back, #{user.username}!"
+      else
+      #   flash[:alert] = "Invalid login credentials."
+      #   render :new
+      redirect_to s_path, alert: "Credentials not known."
+      end
     end
-    def create
-        @student = Student.new(student_params)
-        if @student.save #save into sql
-            redirect_to new_student_path
-        end
-    end
-    private
-    def student_params
-        params.require(:student).permit(:username, :password)
-    end
+
 end

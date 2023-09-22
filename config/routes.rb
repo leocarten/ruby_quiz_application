@@ -10,7 +10,12 @@ Rails.application.routes.draw do
 
   get "about", to: "about#index"
   get "teacher", to: "teacher#index"
-  get "s", to: "s#index"
+
+
+  get "s", to: "s#new" # for the student
+  post "s", to: "s#create" # for the student
+
+
   get "create", to: "create#index"
 
 
