@@ -22,3 +22,83 @@
     <% end %>
 <% else %>
 <% end %>
+
+<h2 class="ms-1 mt-4"> Enter login credentials </h2>
+<%= form_for @teacher do |f| -%>
+    <div class="mb-3">
+        <label> Email </label>
+        <%= f.text_field :username, class: 'form-control', placeholder: 'example@gmail.com'%>
+    </div>
+
+    <div class="mb-3">
+        <label> Password </label>
+        <%= f.password_field :password, class: 'form-control', placeholder: 'password123'%>
+    </div>
+
+
+    <%= f.submit "Submit!", class: "btn btn-primary" %>
+<% end -%>
+
+<br>
+<h2 class="ms-1">Display everyones credentials:</h2>
+<% if !@teacher.blank? %>
+    <% for item in @teachers %>
+            <h6 class="ms-1">Username: <%= item.username %> | Password: <%= item.password %> </h6>
+    <% end %>
+<% else %>
+<% end %>
+
+<h2 class="ms-1 mt-4"> Enter Question </h2>
+<%= form_for @question do |f| -%>
+    <div class="mb-3">
+        <label> Question </label>
+        <%= f.text_field :QuestionText, class: 'form-control', placeholder: 'example@gmail.com'%>
+    </div>
+
+    <div class="mb-3">
+        <label> The Actual Answer </label>
+        <%= f.text_field :QuestionAnswer, class: 'form-control', placeholder: 'password123'%>
+    </div>
+
+
+    <%= f.submit "Submit!", class: "btn btn-primary" %>
+<% end -%>
+
+<br>
+<h2 class="ms-1">Display all Questions:</h2>
+<% if !@question.blank? %>
+    <% for item in @questions %>
+            <h6 class="ms-1">Question: <%= item.id %> | Username: <%= item.QuestionText %> | Password: <%= item.QuestionAnswer %> </h6>
+    <% end %>
+<% else %>
+<% end %>
+
+<h2 class="ms-1 mt-4">Enter an answer for student</h2>
+<%= form_for @answer do |f| -%>
+  <div class="mb-3">
+    <label>Student</label>
+    <%= f.text_field :student_id, class: 'form-control', placeholder: 'Enter student ID' %>
+  </div>
+
+  <div class="mb-3">
+    <label>Question</label>
+    <%= f.text_field :question_id, class: 'form-control', placeholder: 'Enter question ID' %>
+  </div>
+
+  <div class="mb-3">
+    <label>Answer to the question</label>
+    <%= f.text_field :response, class: 'form-control', placeholder: 'Enter answer' %>
+  </div>
+
+  <%= f.submit "Submit!", class: "btn btn-primary" %>
+<% end -%>
+
+
+<br>
+<h2 class="ms-1">Display all Questions:</h2>
+<% if !@answer.blank? %>
+    <% for item in @answers %>
+            <h6 class="ms-1">Name: <%= item.student.username %> | Question: <%= item.question.QuestionText %> | response: <%= item.response %> </h6>
+    <% end %>
+<% else %>
+<% end %>
