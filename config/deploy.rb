@@ -2,7 +2,7 @@
 lock "~> 3.17.3"
 
 set :application, "simpleform"
-set :repo_url, "git@github.com:username/myapp.git"
+set :repo_url, "git@github.com:leocarten/ruby_quiz_application.git"
 
 # Deploy to the user's home directory
 set :deploy_to, "/home/deploy/#{fetch :application}"
