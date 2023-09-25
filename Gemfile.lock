@@ -71,6 +71,7 @@ GEM
     airbrussh (1.5.0)
       sshkit (>= 1.6.1, != 1.7.0)
     bcrypt (3.1.19)
+    bcrypt_pbkdf (1.1.0)
     bindex (0.8.1)
     bootsnap (1.16.0)
       msgpack (~> 1.2)
@@ -105,6 +106,7 @@ GEM
     debug (1.8.0)
       irb (>= 1.5.0)
       reline (>= 0.3.1)
+    ed25519 (1.2.4)
     erubi (1.12.0)
     globalid (1.2.1)
       activesupport (>= 6.1)
@@ -240,6 +242,7 @@ PLATFORMS
 
 DEPENDENCIES
   bcrypt (~> 3.1.7)
+  bcrypt_pbkdf (~> 1.1)
   bootsnap
   capistrano (~> 3.11)
   capistrano-passenger (~> 0.2.0)
@@ -247,6 +250,7 @@ DEPENDENCIES
   capistrano-rbenv (~> 2.1, >= 2.1.4)
   capybara
   debug
+  ed25519 (~> 1.2)
   importmap-rails
   jbuilder
   puma (~> 5.0)
@@ -260,7 +264,7 @@ DEPENDENCIES
   web-console
 
 RUBY VERSION
-   ruby 3.1.2p20
+   ruby 3.2.2p53
 
 BUNDLED WITH
    2.4.19

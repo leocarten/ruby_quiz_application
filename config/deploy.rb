@@ -1,8 +1,9 @@
 # config valid for current version and patch releases of Capistrano
 lock "~> 3.17.3"
 
-set :application, "simpleform"
+set :application, "ruby_quiz_application"
 set :repo_url, "git@github.com:leocarten/ruby_quiz_application.git"
+set :branch, 'main'
 
 # Deploy to the user's home directory
 set :deploy_to, "/home/deploy/#{fetch :application}"
