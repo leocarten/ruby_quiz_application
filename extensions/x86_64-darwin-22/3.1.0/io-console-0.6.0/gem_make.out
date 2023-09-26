@@ -1,0 +1,19 @@
+current directory: /Users/leocarten/newrails/simpleform/gems/io-console-0.6.0/ext/io/console
+/Users/leocarten/.rbenv/versions/3.1.2/bin/ruby -I /Users/leocarten/.rbenv/versions/3.1.2/lib/ruby/3.1.0 -r ./siteconf20230925-41147-3qcgoc.rb extconf.rb
+checking for termios.h... yes
+checking for cfmakeraw() in termios.h... yes
+checking for sys/ioctl.h... yes
+checking for HAVE_RUBY_FIBER_SCHEDULER_H... yes
+creating Makefile
+
+current directory: /Users/leocarten/newrails/simpleform/gems/io-console-0.6.0/ext/io/console
+make DESTDIR\= clean
+
+current directory: /Users/leocarten/newrails/simpleform/gems/io-console-0.6.0/ext/io/console
+make DESTDIR\=
+compiling console.c
+linking shared-object io/console.bundle
+
+current directory: /Users/leocarten/newrails/simpleform/gems/io-console-0.6.0/ext/io/console
+make DESTDIR\= install
+/usr/local/bin/ginstall -c -m 0755 console.bundle ./.gem.20230925-41147-1h6ueo/io
