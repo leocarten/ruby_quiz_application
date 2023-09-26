@@ -1,5 +1,13 @@
 class SController < ApplicationController
   def new
+    @student = Student.new #create new studnet
+    @students = Student.all #get all students
+  end
+  def index 
+    @student = Student.new
+    @students = Student.all
+    @answer = Answer.new
+    @answers = Answer.all
   end
 
   def create
@@ -12,6 +20,10 @@ class SController < ApplicationController
       #   render :new
       redirect_to s_path, alert: "Credentials not known."
       end
-    end
+  end
 
+  private
+    def student_params
+        params.require(:student).permit(:username, :password)
+    end
 end
